@@ -1,0 +1,27 @@
+{
+  "name": "sneakers-geek",
+  "version": "1.0.0",
+  "description": "list  global - bcrypt 1. login - express-session 2. register 3. home  4. admin page = crud - multer 5. checkout - node mailer",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/midham14/sneakers-geek.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/midham14/sneakers-geek/issues"
+  },
+  "homepage": "https://github.com/midham14/sneakers-geek#readme",
+  "dependencies": {
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "pg": "^8.3.3",
+    "sequelize": "^6.3.5",
+    "sequelize-cli": "^6.2.0"
+  }
+}
