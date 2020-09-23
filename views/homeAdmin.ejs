@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .header-admin{
+            color: pink;
+            background-color: black;
+            width: 100%;
+            height: 7vh;
+            margin-bottom: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header-admin">
+        <center><h1>Welcome To Admin</h1> </center>
+    </div>
+    <center>
+        <a href="/admin/addproduct"><button>Add Product</button></a><br><br>
+        <Table>
+            <tr>
+                <th>Nama Product</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Image</th>
+                <th>Action</th>
+            </tr>
+            <% data.forEach(val=>{ %>
+                <tr>
+                    <td><%= val.name %></td>
+                    <td><%= val.description %></td>
+                    <td><%= val.price %></td>
+                    <td><%= val.image %></td>
+                    <td>
+                        <a href="/admin/editproduct/<%=val.id%>"><button>edit</button></a>
+                        <a href="/admin/delete/<%= val.id %>"><button onClick="return confirm('are you sure want to delete <%= val.name %>')">delete</button></a>
+                    </td>
+                </tr>
+         <%   })%>
+        </Table>
+
+    </center>
+</body>
+</html>

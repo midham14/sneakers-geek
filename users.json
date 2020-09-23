@@ -1,0 +1,23 @@
+[
+    {
+        "name": "user",
+        "email": "user@gmail.com",
+        "password": "user",
+        "address": "user address",
+        "level": "user"
+    },
+    {
+        "name": "admin",
+        "email": "user@gmail.com",
+        "password": "admin",
+        "address": "admin address",
+        "level": "admin"
+    },
+    {
+        "name": "albarmo",
+        "email": "moerhamsa@gmail.com",
+        "password": "albarmo",
+        "address": "Jakarta Selatan",
+        "level": "user"
+    }
+]

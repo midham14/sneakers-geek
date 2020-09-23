@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Yeezo",
+    "description": "Kanye North Next Level Sneakers",
+    "price": 15000000,
+    "image": "belum ada"
+  },
+  {
+    "name": "Yeeza",
+    "description": "Kanye East Next Level Sneakers",
+    "price": 10000000,
+    "image": "belum ada"
+  },
+  {
+    "name": "Yeezep",
+    "description": "Kanye South Next Level Sneakers",
+    "price": 5000000,
+    "image": "belum ada"
+  },
+  {
+    "name": "NMMD",
+    "description": "Good Sneakers",
+    "price": 2000000,
+    "image": "belum ada"
+  }
+]

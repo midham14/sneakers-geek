@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .header-admin{
+            color: pink;
+            background-color: black;
+            width: 100%;
+            height: 7vh;
+            margin-bottom: 40px;
+        }
+        .add-product-form{
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="header-admin">
+        <center><h1>Welcome To Admin</h1> </center>
+    </div>
+    <center>
+        <form action="/admin/editproduct/<%= data.id %>" method="POST">
+            <div class="add-product-form">
+                <input type="text" name="name" placeholder="product name" value="<%= data.name %>">
+                <textarea name="description" rows="4" cols="50" placeholder="product description" value="<%= data.description %>"><%= data.description %></textarea>
+                <input type="text" name ="price" placeholder="input your price" value="<%= data.price %>"> 
+                <input type="file" name="image" value="<%= data.image %>">
+                <button type="submit">SUBMIT</button>
+            </div>
+        </form>
+    </center>
+</body>
+</html>
