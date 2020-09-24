@@ -68,6 +68,22 @@ class Controllers {
                 res.send(err)
             })
     }
+
+    static getHistory(req, res) {
+        let idUser = +req.session.userId
+
+        User.findByPk(idUser, {
+            include: Product
+        })
+            .then(data => {
+                res.render('history', { data })
+                console.log(data.Products.length)
+            })
+            .catch(err => {
+                res.send(err)
+            })
+
+    }
 }
 
 module.exports = {
