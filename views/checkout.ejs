@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: auto auto;
+            padding: 10px;
+        }
+
+        .grid-item {
+            height: 30vh;
+            margin: 20px 30px 20px 30px;
+        }
+
+        .image-box {
+            width: 50%;
+            height: 20vh;
+            max-height: 25vh;
+        }
+    </style>
+</head>
+
+<body>
+    <%- include('partials/headerBuyer.ejs') %>
+
+    <h1>Checkout</h1>
+
+    <br>
+    <h1>Data User</h1>
+    <h2>Name :<%= objUser.name %> </h2>
+    <h2>Email : <%= objUser.email %></h2>
+    <h2>Level : <%= objUser.level %></h2>
+    <h2>Addres : <%= objUser.address %></h2>
+
+    <br>
+
+    <h2><%= data.name %> </h2>
+    <h2><%= data.description %> </h2>
+    <h2><%= data.price %> </h2>
+    <div class="image-box"><img src="/uploads/<%= data.image %> " alt="" width="200px"></div>
+
+
+    <form action="/checkout/<%= data.id %>" method="post">
+
+        <button><input type="submit" value="Oke"></button>
+    </form>
+
+
+</body>
+
+</html>
