@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        .grid-container{
+            display: grid;
+            grid-template-columns: auto auto;
+            padding: 10px;
+        }
+        .grid-item{
+            height: 30vh;
+            margin: 20px 30px 20px 30px;
+        }
+        .image-box{
+            width: 50%;
+            height: 20vh;
+            max-height: 25vh;
+        }
+    </style>
+</head>
+<body>
+    <%- include('partials/headerBuyer.ejs') %>
+
+    <div class="grid-container">
+      <% data.forEach(val=>{ %>
+        <div class="grid-item">
+            <center><div class="image-box"><img src="/uploads/<%= val.image %>" alt="" width="200px"></div></center>
+            <center><div> <%= val.name %> </div></center>
+            <center><div> <%= val.description %></div></center>
+            <center><div> <%= val.price %></div></center>
+            <center>
+                <div>
+                    <button>Checkout !</button>
+                </div>
+            </center>
+        </div>
+     <%  })%>
+    </div>
+</body>
+</html>

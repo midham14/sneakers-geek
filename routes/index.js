@@ -1,28 +1,30 @@
 const router = require('express').Router()
+const AdminRouter = require('./adminRouter')
+const { Controllers } = require('../controllers/index')
+const LoginController = require('../controllers/login-controller')
 const session = require('express-session')
-const Controller = require('../controllers/index')
-
 const loginRouter = require('./login')
 const registerRouter = require('./register')
 
-// router.use((req, res, next) => {
-//     console.log(`middleware`)
-//     next()
-// })
 
 router.use(session({
     secret: "sneakergeek",
     resave: false,
     saveUninitialized: false,
-    cookie: { maxAge: 3000 }
+    cookie: { maxAge: 300000 }
 }))
 
 
-router.use('/login', loginRouter)
-router.use('/register', registerRouter)
 
-//ini test
-router.get('/', Controller.home)
+//ini home
+router.get('/', Controllers.home)
+// login
+router.use('/login', loginRouter)
+//register
+router.use('/register', registerRouter)
+//admin
+router.use('/admin', AdminRouter)
+
 
 
 module.exports = router

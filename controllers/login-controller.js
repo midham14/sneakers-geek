@@ -2,7 +2,6 @@ const { User } = require('../models')
 const session = require('express-session')
 
 class LoginController {
-
     static loginForm(req, res) {
         if (req.query.err) {
             res.render('login', { errorLogin: true })
@@ -19,7 +18,6 @@ class LoginController {
             }
         })
             .then(data => {
-                // res.send(data)
                 if (data === null) {
                     res.redirect('/login?err=true')
                 } else {
