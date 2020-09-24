@@ -20,6 +20,13 @@ module.exports = (sequelize, DataTypes) => {
     ProductId: DataTypes.INTEGER,
     paid: DataTypes.BOOLEAN
   }, {
+    hooks: {
+      beforeCreate(instance, opt) {
+        if (instance.name == "Yeeza") {
+          instance.price -= instance.price * 10 / 100
+        }
+      }
+    },
     sequelize,
     modelName: 'Purchased',
   });

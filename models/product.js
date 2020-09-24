@@ -28,14 +28,6 @@ module.exports = (sequelize, DataTypes) => {
     price: DataTypes.INTEGER,
     image: DataTypes.STRING
   }, {
-
-    hooks: {
-      beforeCreate(instance, opt) {
-        if (instance.name == "Yeeza") {
-          instance.price -= instance.price * 10 / 100
-        }
-      }
-    },
     sequelize,
     modelName: 'Product',
   });

@@ -22,17 +22,17 @@ class LoginController {
                 if (user === null) {
                     res.redirect('/login?err=true')
                 } else {
-
                     req.session.isLogin = true
                     req.session.userId = user.id
                     req.session.name = user.name
                     req.session.email = user.email
                     req.session.address = user.address
                     req.session.level = user.level
-
-                    // console.log(user.id)
-                    // res.send(user.id)
-                    res.redirect('/')
+                    if(user.level === 'user'){
+                        res.redirect('/')
+                    }else if(user.level === 'admin'){
+                        res.redirect('/admin')
+                    }
                 }
             })
             .catch(err => {
