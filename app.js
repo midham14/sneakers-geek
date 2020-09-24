@@ -8,8 +8,13 @@ app.set('view engine', 'ejs')
 app.use(express.urlencoded({ extended: false }))
 app.use(express.static('public'))
 
+require('dotenv').config()
+const morgan = require('morgan')
+const nodemailer = require('nodemailer')
 
 app.use('/', routes)
+
+app.use(morgan('dev'))
 
 
 app.listen(PORT, () => {
