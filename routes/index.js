@@ -18,6 +18,12 @@ router.use(session({
 
 //ini home
 router.get('/', Controllers.home)
+
+//ini checkout 
+router.get('/checkout/:id', Controllers.checkout)
+router.post('/checkout/:id', Controllers.CreateBill)
+
+
 // login
 router.use('/login', loginRouter)
 //register
