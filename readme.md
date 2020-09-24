@@ -8,3 +8,9 @@ global - bcrypt
 
 user == register, login , belanja, read list
 admin == tambah edit delete
+
+
+// router.use((req, res, next) => {
+//     console.log(`middleware`)
+//     next()
+// })

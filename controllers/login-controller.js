@@ -35,7 +35,7 @@ class LoginController {
 
     static logout(req, res) {
         req.session.isLogin = false
-        res.redirect('/login')
+        res.redirect(`/login`)
     }
 }
 

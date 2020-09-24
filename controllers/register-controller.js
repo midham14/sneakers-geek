@@ -11,7 +11,7 @@ class RegisterController {
             email: req.body.email,
             password: req.body.password,
             address: req.body.address,
-            level: req.body.level
+            level: "user"
         }
         User.create(user)
             .then(data => {
