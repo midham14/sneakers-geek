@@ -1,12 +1,16 @@
 const AdminController = require('./admin-controller')
+const {Product} = require('../models')
 
-class Conntrollers {
+class Controllers {
     static home(req, res) {
-        res.render('index')
+        Product.findAll()
+            .then(data=>{
+                res.render('homeBuyer',{data})
+            }).catch(err=>res.send(err))
     }
 }
 
 module.exports = {
-    Conntrollers,
+    Controllers,
     AdminController
 }

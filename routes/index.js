@@ -1,11 +1,11 @@
 const router = require('express').Router()
 const AdminRouter = require('./adminRouter')
-const { Conntrollers } = require('../controllers/index')
+const { Controllers } = require('../controllers/index')
 const LoginController = require('../controllers/login-controller')
 
 
 //ini test
-router.get('/', Conntrollers.home)
+router.get('/', Controllers.home)
 
 
 //admin

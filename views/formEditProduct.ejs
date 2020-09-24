@@ -28,7 +28,7 @@
         <center><h1>Welcome To Admin</h1> </center>
     </div>
     <center>
-        <form action="/admin/editproduct/<%= data.id %>" method="POST">
+        <form action="/admin/editproduct/<%= data.id %>" method="POST" enctype="multipart/form-data">
             <div class="add-product-form">
                 <input type="text" name="name" placeholder="product name" value="<%= data.name %>">
                 <textarea name="description" rows="4" cols="50" placeholder="product description" value="<%= data.description %>"><%= data.description %></textarea>
