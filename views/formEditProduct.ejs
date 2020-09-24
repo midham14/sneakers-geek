@@ -9,32 +9,53 @@
             margin: 0;
             padding: 0;
         }
-        .header-admin{
-            color: pink;
-            background-color: black;
-            width: 100%;
-            height: 7vh;
-            margin-bottom: 40px;
-        }
-        .add-product-form{
+        .edit-product-form{
             display: flex;
             flex-direction: column;
-            width: 50%;
+            width: 30%;
+        }
+        .edit-product-form > input , .edit-product-form > button{
+            margin: 3px;
+            justify-content: center;
+            text-align: center;
+            height: 25px;
+        }
+        .edit-product-form > textarea{
+            margin: 3px;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .edit-product-form > center> button{
+            width: 120px;
+            height: 40px;
+            background-color: transparent;
+            border: 1px solid #3581b8;
+            color: #3581b8;
+            margin-top: 30px;
+        }
+        .edit-product-form > center> button:hover{
+            width: 120px;
+            height: 40px;
+            background-color: #3581b8;
+            border: transparent;
+            color: white;
+            margin-top: 30px;
         }
     </style>
 </head>
 <body>
     <div class="header-admin">
-        <center><h1>Welcome To Admin</h1> </center>
+        <%- include('partials/headerAdmin.ejs') %>
     </div>
     <center>
         <form action="/admin/editproduct/<%= data.id %>" method="POST" enctype="multipart/form-data">
-            <div class="add-product-form">
+            <div class="edit-product-form">
                 <input type="text" name="name" placeholder="product name" value="<%= data.name %>">
                 <textarea name="description" rows="4" cols="50" placeholder="product description" value="<%= data.description %>"><%= data.description %></textarea>
                 <input type="text" name ="price" placeholder="input your price" value="<%= data.price %>"> 
                 <input type="file" name="image" value="<%= data.image %>">
-                <button type="submit">SUBMIT</button>
+                <center><button type="submit">SUBMIT</button></center>
             </div>
         </form>
     </center>
