@@ -14,7 +14,8 @@ class LoginController {
         User.findOne({
             where: {
                 name: req.body.name,
-                password: req.body.password
+                password: User.passwordHash(req.body.password)
+
             }
         })
             .then(user => {

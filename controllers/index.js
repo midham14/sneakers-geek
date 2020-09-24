@@ -112,7 +112,33 @@ class Controllers {
         }
 
     }
+    static getHistory(req, res) {
+        let idUser = +req.session.userId
 
+        // User.findByPk(idUser, {
+        //     include: Product
+        // })
+        //     .then(data => {
+        //         console.log(data)
+        //         res.render('history', { data })
+        //     })
+        //     .catch(err => {
+        //         res.send(err)
+        //     })
+        console.log(idUser)
+        Purchased.findAll({
+            where:{UserId:idUser},
+            include:[{model:Product},{model:User}]
+
+        })
+        .then(data=>{
+            res.render('history', { data })
+        })
+        .catch(err=>{
+            console.log(err)
+        })
+
+    }
 }
 
 module.exports = {

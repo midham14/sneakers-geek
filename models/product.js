@@ -9,6 +9,14 @@ module.exports = (sequelize, DataTypes) => {
      * This method is not a part of Sequelize lifecycle.
      * The `models/index` file will call this method automatically.
      */
+    static getTime() {
+      return Date()
+    }
+
+    getFormated() {
+      return this.price.toLocaleString('id-ID')
+    }
+
     static associate(models) {
       // define association here
       Product.belongsToMany(models.User, { through: models.Purchased })

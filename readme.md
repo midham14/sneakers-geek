@@ -22,3 +22,18 @@ id username level
 bang gua udah bikin relasinya many to many 
 
 
+
+                    // User.findAll({
+        //     include: Product,
+        //     where: {
+        //         id: idUser
+        //     }
+        // })
+        //     .then(data => {
+        //         // res.send(data)
+        //         // res.render('history', { data })
+        //         console.log(data)
+        //     })
+        //     .catch(err => {
+        //         res.send(err)
+        //     })

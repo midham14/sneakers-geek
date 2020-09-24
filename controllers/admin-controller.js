@@ -16,6 +16,7 @@ class AdminController{
     }
 
     static formAddProductHandler(req,res){
+        let level = req.session.level
         if(level === 'admin'){
         res.render('formAddProduct')
         }else{
@@ -24,6 +25,7 @@ class AdminController{
     }
 
     static addProductHandler(req,res){
+        let level = req.session.level
         if(level === 'admin'){
             try{
                 const upload = uploader('SNEAKERSPRODUCT').fields([{name:'image'}])
@@ -54,6 +56,7 @@ class AdminController{
     }
 
     static formEditProductHandler(req,res){
+        let level = req.session.level
         let id = Number(req.params.id)
         if(level === 'admin'){
         Product.findByPk(id)
@@ -65,6 +68,7 @@ class AdminController{
     }
     
     static editProductHandler(req,res){
+        let level = req.session.level
         if(level === 'admin'){
             try{
                 const upload = uploader('SNEAKERSPRODUCT').fields([{name:'image'}])
@@ -103,6 +107,7 @@ class AdminController{
     }
 
     static deleteProductHandler(req,res){
+        let level = req.session.level
         let id = Number(req.params.id)
         if(level === 'admin'){
             Product.destroy({where:{id}})

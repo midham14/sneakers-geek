@@ -1,7 +1,9 @@
 'use strict';
+
 const {
   Model
 } = require('sequelize');
+const encrypt = require('../helpers/getencrypt');
 module.exports = (sequelize, DataTypes) => {
   class User extends Model {
     /**
@@ -9,6 +11,10 @@ module.exports = (sequelize, DataTypes) => {
      * This method is not a part of Sequelize lifecycle.
      * The `models/index` file will call this method automatically.
      */
+    static passwordHash(password) {
+      return encrypt(password)
+    }
+
     static associate(models) {
       // define association here
       User.belongsToMany(models.Product, { through: models.Purchased })

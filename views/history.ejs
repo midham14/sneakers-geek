@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History Purchased</title>
+</head>
+
+<body>
+
+    <table border="1">
+        <tr>
+            <th>No</th>
+            <th>Name</th>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Date</th>
+        </tr>
+        <% data.forEach((val,index)=>{ %>
+            <tr>
+                <td><%= index+1 %>. </td>
+                <td><%= val.User.name %></td>
+                <td><%= val.Product.name %></td>
+                <td><%= val.Product.price %></td>
+                <td><%= val.Product.createdAt %></td>
+            </tr>
+      <%  })%>
+    </table>
+
+</body>
+
+</html>
