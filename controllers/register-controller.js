@@ -6,13 +6,15 @@ class RegisterController {
     }
 
     static register(req, res) {
+
         let user = {
             name: req.body.name,
             email: req.body.email,
-            password: req.body.password,
+            password: User.passwordHash(req.body.password),
             address: req.body.address,
             level: "user"
         }
+        let data = user
         User.create(user)
             .then(data => {
                 res.redirect('/login')

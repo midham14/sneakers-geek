@@ -33,6 +33,8 @@
 <body>
     <%- include('partials/headerBuyer.ejs') %>
 
+    <button><a href="/history">TEST HISTORY</a></button>
+
     <div class="grid-container">
         <% data.forEach(val=>{ %>
         <div class="grid-item">
@@ -46,7 +48,7 @@
                 <div> <%= val.description %></div>
             </center>
             <center>
-                <div> <%= val.price %></div>
+                <div> <%= val.getFormated() %></div>
             </center>
             <center>
                 <div>
